@@ -1,0 +1,62 @@
+.navbar-default {
+    background-color: #000000;
+    height: 70px;
+    text-decoration-color: #ffffff;
+}
+body {
+    padding-top: 75px;
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a {
+    color: #cccccc;
+}
+.navbar-default a:hover {
+    color: #fff;
+}
+.navbar-default {
+    color: #fff;
+}
+.btn {
+    background-color: #cccccc;
+    color: #000;
+    margin: 10px 0 10px 5px;
+}
+.post {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.odd {
+    background-color: #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+.even {
+    background-color: #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+.form-auth {
+    max-width: 330px;
+    padding: 5px;
+    margin: 0 auto;
+}
+#mainright {
+    float: right;
+    width: 110%;
+    margin-right: -200px;
+}
+#mainleft {
+    float: left;
+    width: 25%;
+    margin-left: -300px;
+}
+@media (min-width: 100%) {
+    .container {
+        max-width: 100%;
+    }
+}

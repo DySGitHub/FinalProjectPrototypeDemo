@@ -1,0 +1,114 @@
+<div id="mainright">
+    <div class="clearfix">
+        <form ng-Submit="post()">
+            <!--<input required class="form-control" maxlength="200" rows="3" value="{{current_user}}" ng-model="newPost.username" placeholder={{current_user}}></input>-->
+            <div class="clearfix" ng-show="authenticated">
+                <h3>Post As:</h3>
+                <label>
+                    <input type="radio" ng-model="newPost.username" value={{current_user}}> {{current_user}}
+                </label>
+                <br/>
+                <label>
+                    <input type="radio" ng-model="newPost.username" value="Anonymous"> Anonymous
+                </label>
+                <br/>
+
+                <select ng-model="newPost.brand">
+                    <option value=""><b>---Car Brand---</b></option>
+                    <option ng-value="Volvo">Volvo</option>
+                    <option ng-value="Saab">Saab</option>
+                    <option ng-value="Mercedes">Mercedes</option>
+                    <option ng-value="Audi">Audi</option>
+                    <option ng-value="Ferrari">Ferrari</option>
+                    <option ng-value="BMW">BMW</option>
+                    <option ng-value="Other..">Other</option>
+                </select>
+                <br/>
+                <br/>
+
+                <select ng-model="newPost.type">
+                    <option value=""><b>---Car Type---</b></option>
+                    <option ng-value="Coupe">Coupe</option>
+                    <option ng-value="Saloon">Saloon</option>
+                    <option ng-value="Hatchback">Hatchback</option>
+                    <option ng-value="Convertible">Convertible</option>
+                    <option ng-value="Estate">Estate</option>
+                    <option ng-value="SUV">SUV</option>
+                </select>
+                <br/>
+                <br/>
+
+                <select ng-model="newPost.sale">
+                    <option value=""><b>---Car Sale---</b></option>
+                    <option ng-value="For Sale">For Sale</option>
+                    <option ng-value="Not For Sale">Not For Sale</option>
+                </select>
+                <br/>
+                <br/>
+
+
+                <textarea required class="form-control" maxlength="200" rows="3" placeholder="Car Info" ng-model="newPost.text"></textarea>
+                <input class="btn submit-btn pull-right" type="submit" value="Post Your Car" />
+        </form>
+        </div>
+
+        <div id="post-stream">
+            <h4>Garage Feed</h4>
+            <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+
+                <p><b>Brand:</b> {{post.brand}}</p>
+                <p><b>Type:</b> {{post.type}}</p>
+                <h4><b>Car Info: </b></h4>
+                <p>{{post.text}}</p>
+                <small><b>{{post.sale}}</b></small>
+                </br>
+                <small>Posted by <b>{{post.username}}</b></small>
+                <small class="pull-right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id=mainleft>
+    <h3>Filter By: (Under Development)</h3>
+    <label>
+        <input type="radio" ng-model="filter" value={{current_user}}> {{current_user}}
+    </label>
+    <br/>
+    <label>
+        <input type="radio" ng-model="filter" value="All"> All Users
+    </label>
+    <br/>
+
+    <h3>Brand:</h3>
+
+    <label>
+        <input type="checkbox" ng-model="filter1"> Volvo:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter2"> Saab:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter3"> Mercedes:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter4"> Audi:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter5"> Ferarri:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter6"> BMW:
+    </label>
+    <br/>
+    <label>
+        <input type="checkbox" ng-model="filter7"> Other:
+    </label>
+    <br/>
+
+</div>
