@@ -5,6 +5,8 @@
  */
 
 var app = require('../app');
+var cool = require('cool-ascii-faces');
+
 var debug = require('debug')('Start:server');
 var http = require('http');
 

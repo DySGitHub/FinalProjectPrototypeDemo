@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var cool = require('cool-ascii-faces');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
@@ -12,7 +13,7 @@ var index = require('./routes/index');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose'); //add for Mongo support
-mongoose.connect('mongodb://localhost/myauto-test'); //connect to Mongo
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/myauto-test'); //connect to Mongo
 var app = express();
 
 // view engine setup
